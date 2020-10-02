@@ -43,6 +43,9 @@ public class WelcomeBack extends AppCompatActivity {
             Toast.makeText(view.getContext(), "Email dan Password tidak boleh kosong!",
                     Toast.LENGTH_LONG).show();
         }
+        else if(editTextPassword.getText().toString().length() >= 15) {
+            Toast.makeText(view.getContext(), "Password tidak boleh lebih dari 15 karakter", Toast.LENGTH_LONG).show();
+        }
         // Validasi input email kosong
         else if(TextUtils.isEmpty(editTextEmail.getText().toString().trim())) {
             Toast.makeText(view.getContext(), "Email tidak boleh kosong!", Toast.LENGTH_LONG).show();

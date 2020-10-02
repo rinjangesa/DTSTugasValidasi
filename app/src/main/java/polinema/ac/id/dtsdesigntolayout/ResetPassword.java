@@ -34,6 +34,14 @@ public class ResetPassword extends AppCompatActivity {
             Toast.makeText(view.getContext(), "Code,Password dan Corfirm Password tidak boleh kosong!",
                     Toast.LENGTH_LONG).show();
         }
+        else if(editTextPassword.getText().toString().length() >= 15 ||
+                editTextConfirmPassword.getText().toString().length() >= 15) {
+            Toast.makeText(view.getContext(), "Password tidak boleh lebih dari 15 karakter", Toast.LENGTH_LONG).show();
+        }
+        // Cek inputan new dan confirm
+        else if(!editTextPassword.getText().toString().equals(editTextConfirmPassword.getText().toString())){
+            Toast.makeText(view.getContext(),"Password tidak sama!",Toast.LENGTH_LONG).show();
+        }
         // Cek inputan new dan confirm
         else if (TextUtils.isEmpty(editTextCode.getText().toString())) {
             Toast.makeText(view.getContext(), "Code tidak boleh kosong!", Toast.LENGTH_LONG).show();
